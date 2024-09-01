@@ -28,7 +28,8 @@ public static void generate(String scenario, WebDriver driver, Exception excepti
         RestAssured.baseURI = "https://portfolio012.atlassian.net/";
 
         String user = "kurt.bradley.jocson@gmail.com";
-        String token = "ATATT3xFfGF0Crt1-yQvxhDfqcHNpPiuAKjxfIdh1EYa3TJjXeur-0IrWmXtQZOhqsVX1TFP1gWPBKZEYOd2TAfK8jSuUUBob0d8bfzLuiSF2p8hV5Tpizh6VRT7X-OLEJhDyv-LJb0wUonKD5EOnwb1dD0HPd_qsEEvVW6HpVH9f5XFbHtFkgY=DEDBC8B9";
+        //String token = "ATATT3xFfGF0Crt1-yQvxhDfqcHNpPiuAKjxfIdh1EYa3TJjXeur-0IrWmXtQZOhqsVX1TFP1gWPBKZEYOd2TAfK8jSuUUBob0d8bfzLuiSF2p8hV5Tpizh6VRT7X-OLEJhDyv-LJb0wUonKD5EOnwb1dD0HPd_qsEEvVW6HpVH9f5XFbHtFkgY=DEDBC8B9";
+        String token = "";
         String encodedCredentials = Base64.getEncoder().encodeToString((user + ":" + token).getBytes());
         String key = "CUS";
 
