@@ -21,6 +21,8 @@ import io.restassured.response.Response;
 public class ReportJira {
 	
 public static void generate(String scenario, WebDriver driver, Exception exception) throws IOException {
+	
+		//This is test
 		
 		String errorDetails = details(driver,exception);
 		String reportName = takeScreenShot(driver, scenario);
