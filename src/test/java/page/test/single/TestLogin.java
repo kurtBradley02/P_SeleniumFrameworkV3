@@ -1,4 +1,4 @@
-package page.test.execute;
+package page.test.single;
 
 import static org.testng.Assert.assertEquals;
 
@@ -17,7 +17,7 @@ import page.util.reports.ReportJira;
 
 
 
-public class TestPage extends TestBase{
+public class TestLogin extends TestBase{
 	
 	PageLogin page;
 	
