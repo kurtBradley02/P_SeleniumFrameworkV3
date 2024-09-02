@@ -7,6 +7,8 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -24,13 +26,15 @@ public static void generate(String scenario, WebDriver driver, Exception excepti
 	
 		//This is test
 		
-		String errorDetails = details(driver,exception);
+		String errorDetails = exception.getMessage();
+		
+		
 		String reportName = takeScreenShot(driver, scenario);
 		
         RestAssured.baseURI = "https://portfolio012.atlassian.net/";
 
         String user = "kurt.bradley.jocson@gmail.com";
-        String token = "ATATT3xFfGF0Crt1-yQvxhDfqcHNpPiuAKjxfIdh1EYa3TJjXeur-0IrWmXtQZOhqsVX1TFP1gWPBKZEYOd2TAfK8jSuUUBob0d8bfzLuiSF2p8hV5Tpizh6VRT7X-OLEJhDyv-LJb0wUonKD5EOnwb1dD0HPd_qsEEvVW6HpVH9f5XFbHtFkgY=DEDBC8B9";
+        String token = "ATATT3xFfGF053t2qgn1vDyq-cyCMUFIus0wE3lht92FhXour9xSuliJOd9z_PXzY007cR-XvidVo1hL_VV2zTVrpbh7x--SlVZ5eLgIXdt0DTYpWwyhrqlYk14DQTvK2Ckq5XgYWlF1w6klE9frAw8K6jqnawYzwmSw6UKFqzgd1swu-KxY71Q=D32B9018";
         String encodedCredentials = Base64.getEncoder().encodeToString((user + ":" + token).getBytes());
         String key = "CUS";
 
@@ -116,11 +120,6 @@ public static void generate(String scenario, WebDriver driver, Exception excepti
                 .header("Content-Type", "application/json").body("{ \"body\": " + commentJson + " }").when()
                 .post("/rest/api/3/issue/" + issueKey + "/comment").then().log().ifError();
 	}
-
-	private static String details(WebDriver driver, Exception e) {
-		return e.getMessage().subSequence(80, 90).toString();
-	}
-	
 
 	private static String takeScreenShot(WebDriver driver, String scenario) throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
