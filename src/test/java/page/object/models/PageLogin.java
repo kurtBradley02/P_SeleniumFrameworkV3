@@ -13,18 +13,27 @@ public class PageLogin extends PageBase{
 		// TODO Auto-generated constructor stub
 	}
 	
-	@FindBy(xpath = "//*[contains(@text,'Feeling')]")
-	WebElement feelingLucky;
-
-	public WebElement getFeelingLucky() {
-		return feelingLucky;
+	@FindBy(id = "username")
+	WebElement username;
+	
+	@FindBy(id = "password")
+	WebElement password;
+	
+	@FindBy(xpath = "/html/body/button")
+	WebElement loginButton;
+	
+	public WebElement getUsername() {
+		return username;
 	}
 
-	public void setFeelingLucky(WebElement feelingLucky) {
-		this.feelingLucky = feelingLucky;
+	public WebElement getPassword() {
+		return password;
+	}
+
+	public WebElement getLoginButton() {
+		return loginButton;
 	}
 	
-	
-	
+
 
 }

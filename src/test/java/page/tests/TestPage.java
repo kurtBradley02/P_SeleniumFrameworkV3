@@ -1,7 +1,10 @@
 package page.tests;
 
-import org.testng.annotations.*;
+import static org.testng.Assert.assertEquals;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.*;
 import page.object.models.PageLogin;
 import util.TestBase;
 
@@ -16,12 +19,19 @@ public class TestPage extends TestBase {
 	
 	@Test(priority = 1)
 	public void navigateTo() {
-		page.driver.get("https://www.google.com/");
+		page.driver.get("file:///C:/Users/kurtb/OneDrive/Desktop/Login.html");
 	}
 	
 	@Test(priority = 2)
-	public void clickImFeelingLucky() {
-		page.getFeelingLucky().click();
+	public void userCanLoginWithValidCredentials() throws InterruptedException
+	{
+		page.getUsername().sendKeys("admin");
+		page.getPassword().sendKeys("123456");
+		page.getLoginButton().click();
+		
+		WebElement successLabel = explicitWait(By.xpath("//*[@id=\"successModal\"]/div/h3"));
+		
+		assertEquals(successLabel.getText(), "Login Success");
+
 	}
-	
 }
