@@ -1,5 +1,7 @@
 package page.util.base;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +21,7 @@ import java.time.Duration;
 public class TestBase {
 
 	public WebDriver driver;
+	public String scenario;
 
 	@BeforeTest()
 	public void setup() {
@@ -35,17 +38,14 @@ public class TestBase {
 		driver.quit();
 	}
 
-	public WebElement explicitWait(By locator) throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-	}
+
 	
 	public WebElement click(WebElement elem) throws IOException {		
 		try {
 			elem.click();
 			return elem;
 		}catch(Exception e) {
-			ReportJira.generate("", driver, e);
+			ReportJira.generate(scenario, driver, e);
 			throw e;
 		}		
 	}
@@ -55,9 +55,40 @@ public class TestBase {
 			elem.sendKeys(value);
 			return elem;
 		}catch(Exception e) {
-			ReportJira.generate("", driver, e);
+			ReportJira.generate(scenario, driver, e);
 			throw e;
-		}		
+		}
+	}
+	
+	public void expectedResult(By locator,String text) throws InterruptedException, IOException {
+		try {
+			WebElement elem = explicitWait(locator);
+			assertEquals(elem.getText(),text);
+		}catch(Exception e) {
+			ReportJira.generate(scenario, driver, e);
+			throw e;
+		}catch(AssertionError e) {
+			ReportJira.generate(scenario, driver, e);
+			throw e;
+		}	
+	}
+	
+	public void expectedResult(By locator) throws InterruptedException, IOException {
+		try {
+			WebElement elem = explicitWait(locator);
+			assertEquals(elem.isDisplayed(),true);
+		}catch(Exception e) {
+			ReportJira.generate(scenario, driver, e);
+			throw e;
+		}catch(AssertionError e) {
+			ReportJira.generate(scenario, driver, e);
+			throw e;
+		}	
+	}
+	
+	private WebElement explicitWait(By locator) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 
 }

@@ -13,7 +13,7 @@ public class PageLogin extends PageBase{
 		// TODO Auto-generated constructor stub
 	}
 	
-	@FindBy(id = "username1")
+	@FindBy(id = "username")
 	WebElement username;
 	
 	@FindBy(id = "password")
