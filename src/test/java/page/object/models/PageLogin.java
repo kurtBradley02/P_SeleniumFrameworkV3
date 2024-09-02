@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import util.PageBase;
+import page.object.base.PageBase;
 
 public class PageLogin extends PageBase{
 

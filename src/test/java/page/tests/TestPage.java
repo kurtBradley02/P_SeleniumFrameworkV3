@@ -7,11 +7,14 @@ import java.io.IOException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
+
+import page.object.base.TestBase;
 import page.object.models.PageLogin;
 import page.reports.ReportJira;
-import util.TestBase;
 
-public class TestPage extends TestBase {
+
+
+public class TestPage extends TestBase{
 	
 	PageLogin page;
 	

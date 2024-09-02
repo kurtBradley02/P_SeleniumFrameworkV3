@@ -1,4 +1,4 @@
-package util;
+package page.object.base;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +11,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import util.PageBase;
+import page.object.base.PageBase;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
