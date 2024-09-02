@@ -24,7 +24,7 @@ public class TestLogin extends TestBase{
     @BeforeMethod
     public void testConfig(ITestResult result) {
         page = new PageLogin(driver);
-        page.driver.get("file:///C:/Users/kurtb/OneDrive/Desktop/Login.html");
+        page.driver.get("C:/Users/kurtb/OneDrive/Desktop/webtest/index.html");
         scenario = result.getMethod().getMethodName();
     }
 
