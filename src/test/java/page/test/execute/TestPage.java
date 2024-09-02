@@ -1,4 +1,4 @@
-package page.tests;
+package page.test.execute;
 
 import static org.testng.Assert.assertEquals;
 
@@ -8,10 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 
-import page.ddt.Excel;
-import page.object.base.TestBase;
+import page.util.base.TestBase;
+import page.util.ddt.Excel;
 import page.object.models.PageLogin;
-import page.reports.ReportJira;
+import page.util.reports.ReportJira;
 
 
 
@@ -25,7 +25,6 @@ public class TestPage extends TestBase{
 		page.driver.get("file:///C:/Users/kurtb/OneDrive/Desktop/Login.html");
 	}
 
-	
 	@Test(priority = 1)
 	public void userLoginValidCredentials() throws InterruptedException, IOException
 	{

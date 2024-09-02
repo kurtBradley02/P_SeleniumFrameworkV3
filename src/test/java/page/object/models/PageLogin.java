@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import page.object.base.PageBase;
+import page.util.base.PageBase;
 
 public class PageLogin extends PageBase{
 
@@ -33,7 +33,5 @@ public class PageLogin extends PageBase{
 	public WebElement getLoginButton() {
 		return loginButton;
 	}
-	
-
 
 }

@@ -1,4 +1,4 @@
-package page.reports;
+package page.util.reports;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,6 +1,4 @@
-package page.object.base;
-
-import static org.testng.Assert.assertEquals;
+package page.util.base;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -13,9 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import page.ddt.Excel;
-import page.object.base.PageBase;
-import page.reports.ReportJira;
+import page.util.reports.ReportJira;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
