@@ -9,10 +9,6 @@ import java.io.IOException;
 
 public class Excel {
 	
-	
-	//static String filePath = "C:/Users/kurtb/OneDrive/Desktop/feature ddt/P_SeleniumFrameworkV3/resources/testdata.xlsx";
-	
-	
 	static String filePath = System.getProperty("user.dir") + "/resources/testdata.xlsx";
 
 	public static String read(String sheetName, int rowNumber, int columnNumber) {

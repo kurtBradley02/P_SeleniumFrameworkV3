@@ -5,10 +5,11 @@
     <classes>
       <class name="page.tests.TestPage">
         <methods>
-          <include name="testConfig"/>
-          <include name="userCanLoginWithValidCredentials"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="testConfig"/>
+          <include name="userLoginInvalidUsername"/>
+          <include name="userLoginValidCredentials"/>
         </methods>
       </class> <!-- page.tests.TestPage -->
     </classes>
